@@ -1,0 +1,153 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "Orange"
+    },
+    {
+      "id": 2,
+      "name": "Inwi"
+    },
+    {
+      "id": 3,
+      "name": "MapFree"
+    },
+    {
+      "id": 4,
+      "name": "SAS"
+    }
+  ],
+  "configs": [
+    {
+      "id": 1,
+      "name": "OraneConfig1",
+      "client": "Orange",
+      "parameters": [
+        {
+          "name": "Date Initiale",
+          "type": "date",
+          "value": ""
+        },
+        {
+          "name": "Date Finale",
+          "type": "date",
+          "value": ""
+        },
+        {
+          "name": "QUERY",
+          "type": "varcharMAX",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": "InwiConfig1",
+      "client": "Inwi",
+      "parameters": [
+        {
+          "name": "TITLE",
+          "type": "varchar",
+          "value": ""
+        },
+        {
+          "name": "QUERY",
+          "type": "varcharMAX",
+          "value": ""
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "MpFreeConfig10",
+      "client": "MapFree",
+      "parameters": [
+        {
+          "name": "DATE",
+          "type": "date",
+          "value": ""
+        },
+        {
+          "name": "NOMBRE DE CLIENTS",
+          "type": "int",
+          "value": ""
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "InwiConfig2",
+      "client": "Inwi",
+      "parameters": [
+        {
+          "name": "DATE",
+          "type": "date",
+          "value": ""
+        },
+        {
+          "name": "QUERY",
+          "type": "varcharMAX",
+          "value": ""
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "MpFreeTest",
+      "client": "MapFree",
+      "parameters": [
+        {
+          "name": "QUERY",
+          "type": "varcharMAX",
+          "value": "NULL"
+        },
+        {
+          "name": "Nombre d'employees",
+          "type": "int",
+          "value": ""
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "SASConfig1",
+      "client": "SAS",
+      "parameters": [
+        {
+          "name": "TITRE",
+          "type": "varchar",
+          "value": ""
+        }
+      ],
+      "id": 6
+    },
+    {
+      "name": "OrangeConfig2",
+      "client": "Orange",
+      "parameters": [
+        {
+          "name": "QUERY",
+          "type": "varcharMAX",
+          "value": ""
+        }
+      ],
+      "id": 7
+    },
+    {
+      "name": "OrangeConfig3",
+      "client": "Orange",
+      "parameters": [
+        {
+          "name": "QUERY",
+          "type": "varcharMAX",
+          "value": ""
+        },
+        {
+          "name": "DATE REMISE",
+          "type": "date",
+          "value": ""
+        }
+      ],
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+    {"id": 1, "col_name":"dateDebut", "type": "date", "value": "NULL"},
+    {"id": 1, "col_name":"dateFin", "type": "date", "value": "NULL"},
+    {"id": 1, "col_name":"QUERY", "type": "varcharMAX", "value": "NULL"},
+    {"id": 2, "col_name":"TITRE", "type": "varchar", "value": "NULL"},
+    {"id": 2, "col_name":"dateDebut", "type": "date", "value": "NULL"},
+    {"id": 2, "col_name":"dateFin", "type": "date", "value": "NULL"},
+    {"id": 2, "col_name":"QUERY", "type": "varcharMAX", "value": "NULL"},
+    {"id": 2, "col_name":"Nombre de clients", "type": "int", "value": "NULL"},
+    {"id": 3, "col_name":"QUERY", "type": "varcharMAX", "value": "NULL"},
+    {"id": 4, "col_name":"QUERY", "type": "varcharMAX", "value": "NULL"},
+    {"id": 5, "col_name":"QUERY", "type": "varcharMAX", "value": "NULL"},
+    {"id": 6, "col_name":"QUERY", "type": "varcharMAX", "value": "NULL"}
+]
