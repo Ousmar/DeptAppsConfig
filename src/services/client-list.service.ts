@@ -11,7 +11,7 @@ import { IClient } from './../models/client-list';
 })
 export class ClientListService {
 
-  private _clientUrl: string = "/api/configs";
+  private _clientUrl: string = "/api/configs2";
 
   constructor(private http: HttpClient) { }
 

@@ -1,0 +1,8 @@
+[
+    {"id": 1, "id_client":1, "config": "SASCONF1"},
+    {"id": 2, "id_client":1, "config": "SASCONF2"},
+    {"id": 3, "id_client":2, "config": "IAM1"},
+    {"id": 4, "id_client":3, "config": "EVERIX1"},
+    {"id": 5, "id_client":4, "config": "INN1"},
+    {"id": 6, "id_client":5, "config": "OSM1"}
+]

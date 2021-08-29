@@ -26,9 +26,17 @@ export class AppService{
        return this.httpClient.post<any>('/api/clients',newClient);
     }
 
-    updateClientData(id: any, data: any){
-        return this.httpClient.put<any>('/api/clients',data);
-      }
+    getConfigs2():Observable<any[]>{
+        return this.httpClient.get<any[]>('/api/configs2');
+    }
+
+    getParameters():Observable<any[]>{
+        return this.httpClient.get<any[]>('/api/parameters');
+    }
+
+    updateParameter(parameter:any):Observable<any>{
+        return this.httpClient.put<any>('/api/parameters/'+parameter.id, parameter);
+    }
 
 
 }

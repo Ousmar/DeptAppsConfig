@@ -372,20 +372,20 @@
 
 
 
-          <li *ngFor="let clientName of clientsName"  class="nav-item menu-open">
-            <a routerLink="/Configurations" routerLinkActive="active" class="nav-link">
+          <li *ngFor="let client of clients"  class="nav-item menu-open">
+            <a  class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                {{ clientName.id  }} - {{ clientName.name }}
+                {{ client.id  }} - {{ client.name }}
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             
-            <ul class="nav nav-treeview" *ngFor="let client of clients">
-                <a href="../forms/general.html" *ngIf="client.client === clientName.name" class="nav-link">
+            <ul class="nav nav-treeview" *ngFor="let config of configs">
+                <a href="../forms/general.html" *ngIf="config.id_client === client.id" class="nav-link">
                   <i class="nav-icon fas fa-ellipsis-h"></i>
-                  <p mat-button class="menu-button" (click)="onSelect(client)">
-                    {{ client.name }}
+                  <p mat-button class="menu-button" (click)="onSelect(config)">
+                    {{ config.config }}
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
