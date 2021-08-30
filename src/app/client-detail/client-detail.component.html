@@ -1,0 +1,63 @@
+<div *ngFor="let config of configs">
+    <div *ngIf="config.id== configId">
+        <p>CONFIGURATION ID: {{config.id}}</p>
+        <p>CONFIGURATIN NAME : {{ config.config }} </p>
+        <p>CLIENT ID : {{ config.id_client }}</p>
+    </div>
+
+</div>
+<hr>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+    <div *ngFor="let parameter of  getParameters()">
+        <div *ngIf="parameter.id_config === configId " >
+
+        <div *ngIf="parameter.type === 'varchar'">
+            <div class="form-group">
+
+                <label for="{{ parameter.col_name }}">{{ parameter.col_name }}</label>
+                <input type="text" required id="{{ parameter.col_name }}" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" name="{{ parameter.col_name }}"
+                    placeholder="{{ parameter.col_name }}" [(ngModel)]=" parameter.value " ngModel>
+                <small [class.d-none]="name.valid || name.untouched" class="text-danger" >{{ parameter.col_name }} IS REQUIRED</small>
+            </div>
+        </div>
+
+
+
+        <div *ngIf="parameter.type === 'date'">
+            <div class="form-group">
+                <label for="{{ parameter.col_name }}">{{ parameter.col_name }}</label>
+                <input type="date" required id="{{ parameter.col_name }}" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control"
+                    placeholder="{{ parameter.col_name }}" [(ngModel)]=" parameter.value "  name="{{ parameter.col_name }}" ngModel>
+                <small [class.d-none]="name.valid || name.untouched" class="text-danger" >{{ parameter.col_name }} IS REQUIRED</small>
+            </div>
+        </div>
+
+
+        <div *ngIf="parameter.type === 'int'">
+            <div class="form-group">
+                <label for="{{ parameter.col_name }}">{{ parameter.col_name }}</label>
+                <input type="number" required id="{{ parameter.col_name }}" class="form-control" #name="ngModel" [class.is-invalid]="name.invalid && name.touched"
+                    placeholder="{{ parameter.col_name }}" [(ngModel)]=" parameter.value "  name="{{ parameter.col_name }}" ngModel>
+                <small [class.d-none]="name.valid || name.untouched" class="text-danger" >{{ parameter.col_name }} IS REQUIRED</small>
+            </div>
+        </div>
+
+
+        <div *ngIf="parameter.type === 'varcharMAX'">
+            <div class="form-group">
+                <label for="{{ parameter.col_name }}">{{ parameter.col_name }}</label>
+                <textarea id="{{ parameter.col_name }}" required class="form-control" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" placeholder="{{ parameter.col_name }}"
+                    name="{{ parameter.col_name }}" [(ngModel)]=" parameter.value "  ngModel></textarea>
+                    <small [class.d-none]="name.valid || name.untouched" class="text-danger" >{{ parameter.col_name }} IS REQUIRED</small>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+    
+
+    <input type="reset" class="btn btn-danger" Value="SET TO 0" />
+    <button [disabled]="f.form.invalid" class="btn btn-primary" type="submit">Save</button>
+</form>

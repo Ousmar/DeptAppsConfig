@@ -1,0 +1,90 @@
+<div class="card card-default">
+  <div class="card-header">
+    <h3 class="card-title">Add new configuration</h3>
+  </div>
+  <form [formGroup]="configForm" (ngSubmit)="onSubmit()">
+    <div class="card-body col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+      <!-- configuration name -->
+      <div class="form-group">
+        <label for="configName">Configuration name</label>
+        <input type="text" class="form-control" id="configName" placeholder="configuration name"
+          formControlName="configName">
+      </div>
+      <!-- client name -->
+      <div class="form-group">
+        <label for="clientName">Client Name</label>
+        <div class="row">
+          <div class="col-md-9">
+            <select id="clientName" class="form-control" formControlName="clientName">
+              <option *ngFor="let client of clients ">{{client.name}}</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <!-- <div class="card card-primary collapsed-card">
+              <div class="card-header" id="addClient">
+                <h3 class="card-title">New client </h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <app-add-client></app-add-client>
+              </div>
+            </div> -->
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-primary">New
+              client</button>
+            <app-add-client></app-add-client>
+          </div>
+        </div>
+      </div>
+      <!-- parameters -->
+      <h3>Parameters:</h3>
+      <span id="error message1"></span>
+      <div class="row" *ngFor="let parameterTypeControl of getParametersTypes().controls; let i = index" id="i">
+        <div formArrayName="parametersNames" class="col-md-5">
+          <div class="form-group">
+            <!-- <label for="parameterName">Parameter name</label> -->
+            <input type="text" id="parameterName" class="form-control" [formControlName]="i"
+              placeholder="parameter name">
+          </div>
+
+        </div>
+        <div formArrayName="parametersTypes" class="col-md-5">
+          <div class="form-group">
+            <!-- <label for="parameterType">Parameter type</label> -->
+            <select id="parameterType" class="form-control" [formControlName]="i">
+
+              <option value="int">INT</option>
+              <option value="varchar">VARCHAR</option>
+              <option value="date">DATE</option>
+              <option value="varcharMAX">VARCHAR MAX</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-tool"  data-card-widget="collapse" id="i"(click)="onDeleteParameter(+i)">
+            <i class="fas fa-minus" id="deleteParameter"></i>
+          </button>
+        </div>
+
+
+
+
+      </div>
+
+      <button type="button" class="btn btn-tool" data-card-widget="collapse" (click)="onAddParameter()">
+        <i class="fas fa-plus" id="addParameter"></i>
+      </button>
+
+      <!-- <button type="button" class="btn btn-primary" (click)="onAddParameter()">Add parameter</button> -->
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+      <button type="submit" class="btn btn-success" [disabled]="configForm.invalid">Submit</button>
+
+    </div>
+
+  </form>
+</div>
